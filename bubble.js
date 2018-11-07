@@ -1,3 +1,6 @@
+// tutorial: https://www.youtube.com/watch?v=T-HGdc8L-7w
+// Choo choo! It's the Coding Train!!!
+
 
 let bubble;
 let dragonBall;
@@ -5,9 +8,9 @@ let bubblebubble;
 
 function setup() {
     createCanvas(600, 400);
-    bubble = new Bubble();
-    dragonBall = new Bubble();
-    bubblebubble = new  Bubble();
+    bubble = new Bubble(200, 200, 20, 100);
+    dragonBall = new Bubble(400, 200, 40, 180);
+    bubblebubble = new  Bubble(300, 300, 30, 32);
     print(bubble.x, bubble.y);
 }
 
@@ -22,9 +25,11 @@ function draw() {
 }
 
 class Bubble {
-    constructor() {
-        this.x = 200;
-        this.y = 150;
+    constructor(x, y, r, color) {
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.color = color;
     }
 
      move() {
@@ -35,8 +40,8 @@ class Bubble {
      show() {
          stroke(255);
          strokeWeight(4);
-         noFill();
-         ellipse(this.x, this.y, 24, 24);
+         fill(200, 55, 0, 255);
+         ellipse(this.x, this.y, this.r*2);
     }
 
 }
